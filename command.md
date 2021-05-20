@@ -83,24 +83,5 @@ command で分からない事が有ったらまずは公式マニュアルを見
 >  ※ 空でない directory を削除しようとするとerror になる。中にfileが残っていることを知らなくて気づかずに削除する事を防げる
 
 >  ※ 隠しfileがあって削除できないことがある
-## パスについて
-パスは directory や file の住所情報
-> ※　directory 階層の区切りは「 / 」で表現
-#### 特別な directory 表記
-1. 絶対パス
-- /home/kume/code/READKE.md
-   - / 　　　　　　　　　　　　　　→　ルート directory
-   - /home　　　　　　　　　　　　→　親　directory
-   - /home/kume　　　　　　　　　→　カレント directory (現在位置)
-   - /home/kume/code　　　　　　　→　カレント directory (現在位置)
-   - /home/kume/code/README.md 　→　カレント directory (現在位置)
-2. 相対パス
--  .  (ドッド)はカレントdirectory
--  .. (ドッド２つ)は親 directory
-#### /home/kume/code/READKE.md
-   - ../..　　　　　　　　　 /
-   - ..　 　　　　　　　　　/home
-   - .　 　　　　　　　　　/home/kume
-   - code または ./code　　 /home/kume/code
-   - ./code/work　　　　　 /home/kume/code/README.md
-   - code/work　　　　　　 /home/kume/code/README.md
+## file の操作
+### cat ファイルの中身を表示・確認
