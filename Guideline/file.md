@@ -117,3 +117,29 @@ Linuxではファイルに別名をつける事ができ、別名をつけるこ
     cat file_symbolic
 - cat: file_symbolic: No such file or directory
 > ※ そのようなファイル、ディレクトリはありませんと表示される。symbolicが壊れるという事。symbolic link は元のファイルのパス名が記載されているだけなので、元ファイルが無くなるとファイルが存在しなくなる為に上記のような表示になる
+## $ find コマンド fileを検索する
+find そのまま：ファイルを検索するコマンド
+- $ find . -name README.md -print
+-  .　　　　　　　　　　　　　検索開始directory(カレントディレクトリ)
+- -name README.md　　　　検索条件
+- -print　　　　　　　　　　　検索アクション
+   - 例）./wordpress/.../README.md
+> ※ 引数を起点にした(カレントdirectory)ファイル名がREADME.mdというfileを探して(-name〇〇)、見つかったらPATHを表示してという指示(-print)　※ -print の記述が無くても同じ意味になる
+#### file名を指定して検索　※ **名は大文字・小文字は区別**
+    find . -name README.md
+#### ワイルドカードが使用できる　※ * を使って指定　' 〇〇 'シングルか” ”で囲う
+    find . -name '*.htm' -print
+>  ※ ＊(アスタリスク)は任意の文字列に一致する。？も使えて、任意の一文字に一致する。
+>  ※ ' か " で囲わないと＊がbashのPATH名展開をしてしまう。.htmlという拡張子がついているfileを拾ってしまい、errorの表示がされる
+#### -iname ファイル名を指定してfileを検索　※ **大文字・小文字は区別しない**
+    find . -iname readme.md
+### -type ファイルの種類で検索
+#### -type f 通常のファイル
+    find . -type f print
+#### -type l シンボリックリンク
+    find . -type l print
+#### -type d directory
+    find . -type f print
+#### 複数の検索条件を指定。なお、 -aは省略可能
+    find . -type d -a -name images -print
+> ※ ディレクトリ名がimagesというものを検索してという意味
