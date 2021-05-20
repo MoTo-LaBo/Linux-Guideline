@@ -65,7 +65,7 @@ move の略
 #### ファイルを directory から出す
     mv test.txt ../
 - 今いる directory から１つ上の階層の directory へ上がる
-## cp コピーコマンド
+## $ cp コピーコマンド
 copy の略：
 - $ cp [オプション]<コピー元><コピー先>
 #### fileをコピー
