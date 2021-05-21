@@ -84,7 +84,7 @@ command で分からない事が有ったらまずは公式マニュアルを見
 
 >  ※ 隠しfileがあって削除できないことがある
 ## file の操作
-### cat ファイルの中身を表示・確認
+## cat ファイルの中身を表示・確認
 - 今回はLinuxだが、Mac ターミナル(zsh)の場合は cat Desktop/test/test.txt  スラッシュ/は必要ない！
 #### $ cat [オプション]<ファイル名>
     cat /Desktop/test/test.txt
@@ -92,7 +92,7 @@ command で分からない事が有ったらまずは公式マニュアルを見
     cat /Desktop/test/test.txt
 #### $ cat <ファイル名><ファイル名> 複数指定できる ※順表示になる
     cat /Desktop/test/test.txt /Desktop/test2/test2.txt
-### $ less ファイルの中身をスクロール表示させる
+## $ less ファイルの中身をスクロール表示させる
 #### $ less [オプション]<ファイル名>
     less /Desktop/test/test.txt
 - スクロール時の操作
@@ -106,7 +106,7 @@ command で分からない事が有ったらまずは公式マニュアルを見
    - ?<文字列>　　　　less コマンド終了
    - n　　　　　　　　次の検索結果に移動
    - N　　　　　　　　前の検索結果に移動
-### $ touch ファイルの作成
+## $ touch ファイルの作成
 touch の略：空のファイルを作成するコマンド
 #### touch <新規ファイル><新規ファイル２>
     touch README.md
@@ -148,14 +148,14 @@ copy の略：
     cp -r dir new_dir
 - cpコマンドだけでは、directory はコピーできない。-r をつける
 - directory の中身も一緒にコピーしてくれる
-### $ ln リンクを貼ろう
+## $ ln リンクを貼ろう
 - $ `ln [オプション]<リンク元ファイル名><リンク名>`
 #### ハードリンクを貼る
      ln file1 file2
 - オプションをつけないとハードリンクになる
 #### シンボリックリンクを貼る
      ln -s file1 file3
-### file名を指定して検索　※ **名は大文字・小文字は区別**
+## file名を指定して検索　※ **名は大文字・小文字は区別**
     find . -name README.md
 #### ワイルドカードが使用できる　※ * を使って指定　' 〇〇 'シングルか” ”で囲う
     find . -name '*.htm' -print
