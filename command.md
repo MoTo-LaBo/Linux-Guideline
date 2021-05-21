@@ -85,3 +85,91 @@ command で分からない事が有ったらまずは公式マニュアルを見
 >  ※ 隠しfileがあって削除できないことがある
 ## file の操作
 ### cat ファイルの中身を表示・確認
+- 今回はLinuxだが、Mac ターミナル(zsh)の場合は cat Desktop/test/test.txt  スラッシュ/は必要ない！
+#### $ cat [オプション]<ファイル名>
+    cat /Desktop/test/test.txt
+#### $ cat -n 行番号を表示する
+    cat /Desktop/test/test.txt
+#### $ cat <ファイル名><ファイル名> 複数指定できる ※順表示になる
+    cat /Desktop/test/test.txt /Desktop/test2/test2.txt
+### $ less ファイルの中身をスクロール表示させる
+#### $ less [オプション]<ファイル名>
+    less /Desktop/test/test.txt
+- スクロール時の操作
+   - space 又は f　　　一画面下にスクロール
+   - b　　　　　　　　一画面上にスクロール
+   - j　　　　　　　　一行下にスクロール
+   - k　　　　　　　　一行上にスクロール
+   - q　　　　　　　　less コマンド終了
+ - 検索の操作
+   - /<文字列>　　　　less コマンド終了
+   - ?<文字列>　　　　less コマンド終了
+   - n　　　　　　　　次の検索結果に移動
+   - N　　　　　　　　前の検索結果に移動
+### $ touch ファイルの作成
+touch の略：空のファイルを作成するコマンド
+#### touch <新規ファイル><新規ファイル２>
+    touch README.md
+## $ rm ファイル削除　(directoryの削除)
+remove の略：rmコマンドは実行すると、**ゴミ箱に行くのではなく本当に削除される**
+- rm はfileを削除するコマンド。directory 削除はオプションをつける
+####  file 削除
+    rm REDME.md
+#### -r　をつける directory も合わせて削除
+    rm -r dir
+- directory の中のファイルやディレクトリー自体もまとめて削除されるので注意！！
+#### -f　をつける fileを削除する際に警告文が表示されない
+    rm -f file
+- 大量のfileを削除する時に使う。あまりお勧めしない
+#### -i　をつける fileを削除する前に警告が表示される
+    rm -i file
+### $ mv ファイル移動/ファイル名変更
+move の略
+- $ `mv [オプション]<移動元><移動先>`
+   - file・directory移動
+- $ `mv [オプション]<ファイル名><変更後file名>`
+   - file 名の変更
+- $ `mv -i <ファイル名><変更後file名>`
+   - 上書きする前に確認表示
+#### ファイルを directory から出す
+    mv test.txt ../
+- 今いる directory から１つ上の階層の directory へ上がる
+## $ cp コピーコマンド
+copy の略：
+- $ cp [オプション]<コピー元><コピー先>
+#### fileをコピー
+    cp test.txt new_test.txt
+#### fileをdirectory 内にコピーする
+    cp test.txt dir/
+- コピー先のファイルがすでにあると上書きするので注意する！！
+#### -i　をつける。上書きする前に確認してくれる
+    cp -i test.txt new_test.txt
+#### -r　をつける。directory をコピーする
+    cp -r dir new_dir
+- cpコマンドだけでは、directory はコピーできない。-r をつける
+- directory の中身も一緒にコピーしてくれる
+### $ ln リンクを貼ろう
+- $ `ln [オプション]<リンク元ファイル名><リンク名>`
+#### ハードリンクを貼る
+     ln file1 file2
+- オプションをつけないとハードリンクになる
+#### シンボリックリンクを貼る
+     ln -s file1 file3
+### file名を指定して検索　※ **名は大文字・小文字は区別**
+    find . -name README.md
+#### ワイルドカードが使用できる　※ * を使って指定　' 〇〇 'シングルか” ”で囲う
+    find . -name '*.htm' -print
+>  ※ ＊(アスタリスク)は任意の文字列に一致する。？も使えて、任意の一文字に一致する。
+>  ※ ' か " で囲わないと＊がbashのPATH名展開をしてしまう。.htmlという拡張子がついているfileを拾ってしまい、errorの表示がされる
+#### -iname ファイル名を指定してfileを検索　※ **大文字・小文字は区別しない**
+    find . -iname readme.md
+### -type ファイルの種類で検索
+#### -type f 通常のファイル
+    find . -type f print
+#### -type l シンボリックリンク
+    find . -type l print
+#### -type d directory
+    find . -type f print
+#### 複数の検索条件を指定。なお、 -aは省略可能
+    find . -type d -a -name images -print
+> ※ ディレクトリ名がimagesというものを検索してという意味
