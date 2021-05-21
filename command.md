@@ -1,5 +1,4 @@
-# Linux command
-## Linux CLI
+# Linux CLI
 command で分からない事が有ったらまずは公式マニュアルを見る事
 ### --help オプション
     <command> --help
