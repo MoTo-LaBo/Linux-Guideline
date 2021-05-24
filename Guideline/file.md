@@ -16,7 +16,7 @@ concatenate の略  ：結合
     cat /Desktop/test/test.txt
 #### $ cat -n 行番号を表示する
     cat /Desktop/test/test.txt
-#### $ cat <ファイル名><ファイル名> 複数指定できる ※順表示になる
+#### $ cat -n <ファイル名><ファイル名> 複数指定できる ※順表示になる
     cat /Desktop/test/test.txt /Desktop/test2/test2.txt
 ### $ less ファイルの中身をスクロール表示させる
 less - opposite of more ：逆スクロールもできる
