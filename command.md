@@ -87,7 +87,7 @@ command で分からない事が有ったらまずは公式マニュアルを見
 #### $ cat [オプション]<ファイル名>
     cat /Desktop/test/test.txt
 #### $ cat -n 行番号を表示する
-    cat /Desktop/test/test.txt
+    cat -n /Desktop/test/test.txt
 #### $ cat <ファイル名><ファイル名> 複数指定できる ※順表示になる
     cat /Desktop/test/test.txt /Desktop/test2/test2.txt
 ## $ less ファイルの中身をスクロール表示させる
